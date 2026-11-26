@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Ihsan Chat Demo - Louis Essomba</title>
+<style>
+body{font-family:Arial;background:#0f1a1a;color:white;margin:0}
+.header{background:#0a8a6a;padding:15px;text-align:center;font-weight:bold;font-size:20px}
+.chat{max-width:500px;margin:20px auto;padding:10px}
+.msg{background:#1e3a3a;padding:10px;border-radius:10px;margin:10px 0;max-width:80%}
+.me{background:#0a8a6a;margin-left:auto}
+.input-box{display:flex;max-width:500px;margin:auto;padding:10px}
+input{flex:1;padding:12px;border-radius:20px;border:none}
+button{background:#0a8a6a;color:white;border:none;padding:12px 20px;border-radius:20px;margin-left:5px}
+</style>
+</head>
+<body>
+<div class="header">IHSAN CONNECT - Demo par Louis Marie Aubin Essomba</div>
+<div class="chat" id="chat">
+<div class="msg">Assalamu Alaikum ! Bienvenue sur Ihsan Connect 👋</div>
+<div class="msg me">Wa Alaikum Salam ! Messagerie privée, sans pub.</div>
+</div>
+<div class="input-box">
+<input id="text" placeholder="Écrire un message...">
+<button onclick="send()">Envoyer</button>
+</div>
+<script>
+function send(){
+let t=document.getElementById('text').value;
+if(!t) return;
+let d=document.createElement('div');
+d.className='msg me'; d.textContent=t;
+document.getElementById('chat').appendChild(d);
+document.getElementById('text').value='';
+}
+</script>
+</body>
+</html>
